@@ -1,0 +1,10 @@
+[package]
+name = "snow_overlay"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = 2
+lto = true
+codegen-units = 1
+strip = true

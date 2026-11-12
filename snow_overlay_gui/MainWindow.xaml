@@ -1,0 +1,55 @@
+<Window
+    x:Class="SnowOverlay.Gui.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Снег на рабочем столе">
+    <Grid Background="#202123" RequestedTheme="Dark">
+        <StackPanel Spacing="16" Padding="22" MaxWidth="440" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Зимнее настроение" FontSize="24" FontWeight="SemiBold" Foreground="#F2F2F2" />
+                <TextBlock Text="Управляй снегом на рабочем столе" Foreground="#A5A7AB" FontSize="14" />
+            </StackPanel>
+
+            <Border Padding="16" CornerRadius="10" Background="#2B2C2F" BorderBrush="#3D3F43" BorderThickness="1">
+                <Grid ColumnSpacing="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Spacing="4" VerticalAlignment="Center">
+                        <TextBlock Text="Снегопад" FontSize="16" FontWeight="SemiBold" Foreground="#F2F2F2" />
+                        <TextBlock x:Name="SnowStateText" Text="Идёт снег" Foreground="#A5A7AB" />
+                    </StackPanel>
+                    <ToggleSwitch x:Name="SnowToggle" Grid.Column="1" IsOn="True" OffContent="Выкл." OnContent="Вкл." />
+                </Grid>
+            </Border>
+
+                <StackPanel Spacing="8">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Частота снегопада" FontSize="16" FontWeight="SemiBold" Foreground="#F2F2F2" />
+                    <TextBlock x:Name="RateText" Grid.Column="1" Text="12 снежинок/сек" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#C5C7CB" />
+                </Grid>
+                <Slider x:Name="RateSlider" Minimum="1" Maximum="60" Value="12" StepFrequency="1" TickFrequency="1" TickPlacement="None" />
+                <TextBlock Text="Настройка применяется сразу" FontSize="12" Foreground="#92959A" />
+            </StackPanel>
+
+            <Border Padding="16" CornerRadius="10" Background="#2B2C2F" BorderBrush="#3D3F43" BorderThickness="1">
+                <StackPanel Spacing="10">
+                    <StackPanel Spacing="4">
+                        <TextBlock Text="Снегоуборщик" FontSize="16" FontWeight="SemiBold" Foreground="#F2F2F2" />
+                        <TextBlock Text="Он выезжает сам, когда сугроб становится высоким." TextWrapping="Wrap" Foreground="#A5A7AB" />
+                    </StackPanel>
+                    <Button x:Name="TractorButton" Content="Вызвать трактор" HorizontalAlignment="Stretch"
+                            Background="#3A3C40" Foreground="#F2F2F2" BorderBrush="#55575B" BorderThickness="1"
+                            CornerRadius="8" Padding="12,8" />
+                </StackPanel>
+            </Border>
+
+            <TextBlock x:Name="StatusText" Text="Оверлей запущен" FontSize="12" Foreground="#92959A" TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</Window>

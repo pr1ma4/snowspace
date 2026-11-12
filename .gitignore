@@ -1,0 +1,18 @@
+# .NET / WinUI build output
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+
+# Rust build output
+**/target/
+**/target-*/
+
+# Local SDK and NuGet caches
+.dotnet-cli/
+.nuget-packages/
+
+# Local release artifacts and diagnostics
+dist/
+startup.log
